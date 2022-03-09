@@ -88,7 +88,7 @@ export interface ledgerWalletProviderOptions {
 	shortName?: string;
 	description?: string;
 	exchangeTimeout?: number;
-	transport?: 'TransportWebAuthn' | 'TransportU2F' | 'TransportWebBLE' | 'TransportWebusb' ;
+	transport?: 'TransportWebAuthn' | 'TransportU2F' | 'TransportWebBLE' | 'TransportWebusb' | 'TransportWebHID' ;
 }
 
 export function ledgerWalletProvider(
@@ -117,6 +117,8 @@ export function ledgerWalletProvider(
 				selectedTransport = await TransportWebBLE.create();
 			} else if (transport === 'TransportWebusb') {
 				selectedTransport = await TransportWebusb.create();
+			} else if (transport === 'TransportWebHID') {
+				selectedTransport = await TransportWebHID.create();
 			}
 			else {
 				selectedTransport = await TransportU2F.create();
