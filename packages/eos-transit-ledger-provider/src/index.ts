@@ -5,6 +5,7 @@ import TransportU2F from '@ledgerhq/hw-transport-u2f';
 import TransportWebAuthn from '@ledgerhq/hw-transport-webauthn';
 import TransportWebBLE from '@ledgerhq/hw-transport-web-ble';
 import TransportWebusb from '@ledgerhq/hw-transport-webusb';
+import TransportWebHID from "@ledgerhq/hw-transport-webhid";
 
 import LedgerDataManager from './LedgerDataManager';
 import 'babel-polyfill';
